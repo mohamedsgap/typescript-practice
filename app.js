@@ -1,18 +1,36 @@
-//console.log('My code goes here!')
-function addTwoNums(num1, num2, printResult) {
-    if (printResult) {
-        return num1 + num2;
-    }
+/*
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    // new type is Tuple (fixed length and type) //
+    role: [number, string]
+} = {
+    name: 'Mohamed',
+    age: 22,
+    hobbies: ['Football', 'Running', 'Video Games'],
+    role: [3, 'SDE']
+};
+
+*/
+var Role;
+(function (Role) {
+    Role[Role["ADMIN"] = 0] = "ADMIN";
+    Role[Role["SWE"] = 1] = "SWE";
+    Role[Role["SDE"] = 2] = "SDE";
+})(Role || (Role = {}));
+;
+var person = {
+    name: 'Mohamed',
+    age: 22,
+    hobbies: ['Football', 'Running', 'Video Games'],
+    role: Role.SDE
+};
+console.log(person.name);
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    // TS already know that hobby is String
+    console.log(hobby.toLocaleUpperCase());
+    // console.log(hobby.map()) // !!! error !!!
 }
-function concateFirstLastName(fname, lname) {
-    return "My name is " + fname + " " + lname + "!";
-}
-var num1 = 15.2;
-var num2 = 14.8;
-var printResult = true;
-var fname = 'Mohamed';
-var lname = 'Abdel Nasser';
-var result = addTwoNums(num1, num2, printResult);
-var fullName = concateFirstLastName(fname, lname);
-console.log(result);
-console.log(fullName);
+console.log(person.role);

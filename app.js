@@ -1,13 +1,10 @@
-function combine(num1, num2) {
-    var result;
-    if (typeof num1 === 'number' && typeof num2 === 'number') {
-        result = num1 + num2;
-    }
-    else {
-        result = num1.toString() + num2.toString();
-    }
-    return result;
+function addTwoNums(num1, num2) {
+    return num1 + num2;
 }
-var combineNums = combine(10.3, 11.7);
-var combineName = combine("Mohamed", 'Abdou');
-console.log(combineName, combineNums);
+function printResult(num) {
+    console.log('Result: ' + num);
+}
+printResult(addTwoNums(10.8, 12.2));
+var combineValues; // 
+combineValues = addTwoNums;
+console.log(combineValues(10.6, 14.9));

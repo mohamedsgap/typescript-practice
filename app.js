@@ -1,10 +1,14 @@
-function addTwoNums(num1, num2) {
-    return num1 + num2;
+// unknow type
+var userInput;
+var userName;
+userInput = 10;
+userInput = 'Mohamed';
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-function printResult(num) {
-    console.log('Result: ' + num);
+// never type (never has return and never return undefind)
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+    // while(true)
 }
-printResult(addTwoNums(10.8, 12.2));
-var combineValues; // 
-combineValues = addTwoNums;
-console.log(combineValues(10.6, 14.9));
+generateError("error happened", 500);
